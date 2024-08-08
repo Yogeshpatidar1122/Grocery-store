@@ -1,0 +1,419 @@
+[
+    {
+      "name": "Tomato",
+      "description": "Fresh red tomatoes",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "tomato",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Potato",
+      "description": "Starchy tuber vegetable",
+      "mrp": 30,
+      "sellingPrice": 25,
+      "slug": "potato",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Carrot",
+      "description": "Crunchy orange carrot",
+      "mrp": 50,
+      "sellingPrice": 45,
+      "slug": "carrot",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Cucumber",
+      "description": "Refreshing green cucumber",
+      "mrp": 20,
+      "sellingPrice": 15,
+      "slug": "cucumber",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Onion",
+      "description": "Pungent red onion",
+      "mrp": 25,
+      "sellingPrice": 20,
+      "slug": "onion",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Spinach",
+      "description": "Fresh green spinach",
+      "mrp": 60,
+      "sellingPrice": 55,
+      "slug": "spinach",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Bell Pepper",
+      "description": "Colorful bell peppers",
+      "mrp": 70,
+      "sellingPrice": 65,
+      "slug": "bell-pepper",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Broccoli",
+      "description": "Green and nutritious broccoli",
+      "mrp": 80,
+      "sellingPrice": 75,
+      "slug": "broccoli",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Cauliflower",
+      "description": "Healthy white cauliflower",
+      "mrp": 90,
+      "sellingPrice": 85,
+      "slug": "cauliflower",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Eggplant",
+      "description": "Purple eggplant",
+      "mrp": 55,
+      "sellingPrice": 50,
+      "slug": "eggplant",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Zucchini",
+      "description": "Tender green zucchini",
+      "mrp": 65,
+      "sellingPrice": 60,
+      "slug": "zucchini",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Green Beans",
+      "description": "Crunchy green beans",
+      "mrp": 45,
+      "sellingPrice": 40,
+      "slug": "green-beans",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Peas",
+      "description": "Sweet green peas",
+      "mrp": 35,
+      "sellingPrice": 30,
+      "slug": "peas",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Corn",
+      "description": "Fresh yellow corn",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "corn",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Lettuce",
+      "description": "Crisp green lettuce",
+      "mrp": 20,
+      "sellingPrice": 15,
+      "slug": "lettuce",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Radish",
+      "description": "Spicy red radishes",
+      "mrp": 30,
+      "sellingPrice": 25,
+      "slug": "radish",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Beetroot",
+      "description": "Sweet red beetroot",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "beetroot",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Brussels Sprouts",
+      "description": "Mini cabbages",
+      "mrp": 70,
+      "sellingPrice": 65,
+      "slug": "brussels-sprouts",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Kale",
+      "description": "Nutritious green kale",
+      "mrp": 50,
+      "sellingPrice": 45,
+      "slug": "kale",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Sweet Potato",
+      "description": "Sweet and nutritious tuber",
+      "mrp": 60,
+      "sellingPrice": 55,
+      "slug": "sweet-potato",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Chili Pepper",
+      "description": "Spicy red chilies",
+      "mrp": 80,
+      "sellingPrice": 75,
+      "slug": "chili-pepper",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Mushroom",
+      "description": "Edible mushrooms",
+      "mrp": 90,
+      "sellingPrice": 85,
+      "slug": "mushroom",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Celery",
+      "description": "Crunchy green celery",
+      "mrp": 35,
+      "sellingPrice": 30,
+      "slug": "celery",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Asparagus",
+      "description": "Tender asparagus spears",
+      "mrp": 65,
+      "sellingPrice": 60,
+      "slug": "asparagus",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Artichoke",
+      "description": "Thorny but delicious artichokes",
+      "mrp": 90,
+      "sellingPrice": 85,
+      "slug": "artichoke",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Leek",
+      "description": "Mild and flavorful leek",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "leek",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Fennel",
+      "description": "Sweet and aromatic fennel",
+      "mrp": 60,
+      "sellingPrice": 55,
+      "slug": "fennel",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Turnip",
+      "description": "Root vegetable with a sharp flavor",
+      "mrp": 50,
+      "sellingPrice": 45,
+      "slug": "turnip",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Rutabaga",
+      "description": "Sweet and tangy rutabaga",
+      "mrp": 70,
+      "sellingPrice": 65,
+      "slug": "rutabaga",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Chard",
+      "description": "Leafy greens with a slight bitterness",
+      "mrp": 55,
+      "sellingPrice": 50,
+      "slug": "chard",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Okra",
+      "description": "Slimy yet tasty okra",
+      "mrp": 60,
+      "sellingPrice": 55,
+      "slug": "okra",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Cabbage",
+      "description": "Crunchy and versatile cabbage",
+      "mrp": 25,
+      "sellingPrice": 20,
+      "slug": "cabbage",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Pumpkin",
+      "description": "Sweet and nutty pumpkin",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "pumpkin",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Butternut Squash",
+      "description": "Sweet and creamy squash",
+      "mrp": 50,
+      "sellingPrice": 45,
+      "slug": "butternut-squash",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Beet",
+      "description": "Sweet and earthy beet",
+      "mrp": 35,
+      "sellingPrice": 30,
+      "slug": "beet",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Daikon Radish",
+      "description": "Mild and crisp daikon radish",
+      "mrp": 45,
+      "sellingPrice": 40,
+      "slug": "daikon-radish",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Arugula",
+      "description": "Peppery and tangy arugula",
+      "mrp": 55,
+      "sellingPrice": 50,
+      "slug": "arugula",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Kohlrabi",
+      "description": "Crisp and mild kohlrabi",
+      "mrp": 60,
+      "sellingPrice": 55,
+      "slug": "kohlrabi",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Endive",
+      "description": "Bitter and crisp endive",
+      "mrp": 70,
+      "sellingPrice": 65,
+      "slug": "endive",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Bok Choy",
+      "description": "Crunchy and tender bok choy",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "bok-choy",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Chili",
+      "description": "Spicy chili peppers",
+      "mrp": 30,
+      "sellingPrice": 25,
+      "slug": "chili",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Cress",
+      "description": "Peppery cress greens",
+      "mrp": 50,
+      "sellingPrice": 45,
+      "slug": "cress",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Scallion",
+      "description": "Mild and flavorful scallions",
+      "mrp": 25,
+      "sellingPrice": 20,
+      "slug": "scallion",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Sweet Corn",
+      "description": "Juicy sweet corn",
+      "mrp": 40,
+      "sellingPrice": 35,
+      "slug": "sweet-corn",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Garlic",
+      "description": "Strong and aromatic garlic",
+      "mrp": 50,
+      "sellingPrice": 45,
+      "slug": "garlic",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Ginger",
+      "description": "Spicy and fragrant ginger",
+      "mrp": 60,
+      "sellingPrice": 55,
+      "slug": "ginger",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Turmeric",
+      "description": "Golden and earthy turmeric",
+      "mrp": 70,
+      "sellingPrice": 65,
+      "slug": "turmeric",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Shallots",
+      "description": "Mild and sweet shallots",
+      "mrp": 35,
+      "sellingPrice": 30,
+      "slug": "shallots",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Napa Cabbage",
+      "description": "Crisp and tender napa cabbage",
+      "mrp": 45,
+      "sellingPrice": 40,
+      "slug": "napa-cabbage",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Jalapeno",
+      "description": "Spicy green jalapeno peppers",
+      "mrp": 55,
+      "sellingPrice": 50,
+      "slug": "jalapeno",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Hubbard Squash",
+      "description": "Sweet and hearty squash",
+      "mrp": 65,
+      "sellingPrice": 60,
+      "slug": "hubbard-squash",
+      "itemQuantityType": "kg"
+    },
+    {
+      "name": "Pumpkin",
+      "description": "Sweet and nutty pumpkin",
+      "mrp": 70,
+      "sellingPrice": 65,
+      "slug": "pumpkin",
+      "itemQuantityType": "kg"
+    }
+  ]
+  
