@@ -2,7 +2,7 @@ const axios = require('axios');
 const { headers } = require('next/headers');
 
 const axiosClient = axios.create({
-    baseURL: "http://192.168.7.98:1337/api",
+    baseURL: "https://grocery-strore-backend.onrender.com/api",
 });
 
 const getCategory = () => axiosClient.get('/categories?populate=*');

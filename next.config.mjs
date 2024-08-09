@@ -1,16 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode:false,
-    images: {
-        remotePatterns: [
-          {
-            protocol: 'http',
-            hostname: '192.168.7.98',
-            port: '1337',
-            pathname: '/**',
-          },
-        ],
-      },
+  reactStrictMode: false,
+  images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'grocery-strore-backend.onrender.com',
+          pathname: '/**',
+        },
+      ],
+  },
 };
 
 export default nextConfig;

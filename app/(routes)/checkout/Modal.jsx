@@ -3,8 +3,7 @@ import { Button } from '@/components/ui/button'; // Adjust the import according 
 import { saveAs } from 'file-saver'; // Ensure this is installed
 import { CheckCircle2 } from 'lucide-react';
 
-
-const Modal = ({ isOpen, onClose, orderDetails }) => {
+const Modal = ({ isOpen, onClose, orderDetails, totalAmounts, taxAmount, deliveryCharge }) => {
   if (!isOpen) return null;
 
   const downloadOrderDetails = () => {
@@ -15,7 +14,7 @@ const Modal = ({ isOpen, onClose, orderDetails }) => {
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-lg">
-      <div className="flex flex-col items-center justify-center mb-6">
+        <div className="flex flex-col items-center justify-center mb-6">
           <div className="flex items-center justify-center w-24 h-24 bg-green-100 rounded-full shadow-lg">
             <CheckCircle2 className="h-16 w-16 text-green-600" />
           </div>
@@ -65,16 +64,16 @@ const Modal = ({ isOpen, onClose, orderDetails }) => {
           </div>
           <div className="flex justify-between py-2">
             <span>Delivery:</span>
-            <span>{orderDetails.deliveryCharge || '40'} Rs</span>
+            <span>{deliveryCharge} Rs</span>
           </div>
           <div className="flex justify-between py-2">
             <span>Tax(9%):</span>
-            <span>{orderDetails.taxAmount} Rs</span>
+            <span>{taxAmount} Rs</span>
           </div>
           <hr />
           <div className="flex justify-between font-bold py-2">
             <span>Total:</span>
-            <span>{orderDetails.totalOrderAmount} Rs</span>
+            <span>{totalAmounts} Rs</span>
           </div>
         </div>
 

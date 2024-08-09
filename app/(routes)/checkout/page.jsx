@@ -1,17 +1,16 @@
 'use client'
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowBigRight } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
 import GlobalApi from '@/app/_utils/GlobalApi';
 import { toast } from 'sonner';
-import Modal from './Modal'; // Adjust the import according to your project structure
-import { Item } from '@radix-ui/react-dropdown-menu';
+import Modal from './Modal';
 import { useRouter } from 'next/navigation';
 
 function CheckOut() {
-    const user = JSON.parse(sessionStorage.getItem('user'));
-    const jwt = sessionStorage.getItem('jwt');
+    const [user, setUser] = useState(null);
+    const [jwt, setJwt] = useState(null);
     const [totalCardItem, setTotalCardItem] = useState(0);
     const [cartItemsList, setCartItemsList] = useState([]);
     const [subtotal, setSubtotal] = useState(0);
@@ -24,9 +23,25 @@ function CheckOut() {
     const [phone, setPhone] = useState('');
     const [pincode, setPincode] = useState('');
     const [address, setAddress] = useState('');
-      const router=useRouter();
+    const router = useRouter();
+
+    const deliveryCharge = 40;
+
     useEffect(() => {
-        getCartItems();
+        // Ensure the code only runs on the client
+        if (typeof window !== 'undefined') {
+            const storedUser = JSON.parse(sessionStorage.getItem('user'));
+            const storedJwt = sessionStorage.getItem('jwt');
+
+            setUser(storedUser);
+            setJwt(storedJwt);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (user && jwt) {
+            getCartItems();
+        }
     }, [user, jwt]);
 
     const getCartItems = async () => {
@@ -47,19 +62,14 @@ function CheckOut() {
             total += element.amount;
         });
 
-        setTotalAmounts((total * 0.9) + 40);
-        setSubtotal(total);
+        const tax = total / 9;
+        setTotalAmounts((total + tax + deliveryCharge).toFixed(2));
+        setSubtotal(total.toFixed(2));
     }, [cartItemsList]);
-
-    const CalculateTotalAmount = () => {
-        const taxrate = subtotal / 9;
-        const totalAmount = subtotal + taxrate + 40;
-        return totalAmount.toFixed(2);
-    }
 
     const taxAmount = () => {
         const taxAmount = subtotal / 9;
-        return taxAmount.toFixed(3);
+        return taxAmount.toFixed(2);
     }
 
     const onApprove = async (data) => {
@@ -78,7 +88,9 @@ function CheckOut() {
                     pincode: pincode,
                     address: address,
                     orderItemList: cartItemsList,
-                    
+                    subtotal: subtotal,
+                    deliveryCharge: deliveryCharge.toFixed(2),
+                    taxAmount: taxAmount(),
                 }
             };
 
@@ -89,11 +101,6 @@ function CheckOut() {
             const response = await GlobalApi.createOrder(payload, jwt);
             setOrderDetails(payload.data);
             setIsModalOpen(true);
-            // cartItemsList.forEach((item,index)=>{
-            //     GlobalApi.deleteCartItems(item.id).then(resp=>{
-            //     })
-            // })
-            // router.replace('/order-confirmation');
         } catch (error) {
             console.error("Error placing order:", error);
             toast(`Error placing order: ${error.message}`);
@@ -123,15 +130,22 @@ function CheckOut() {
                     <div>
                         <h2 className='p-2 font-bold flex justify-between'>SubTotal : <span>{subtotal} Rs</span></h2>
                         <hr />
-                        <h2 className='p-2 flex justify-between'>Delivery : <span>40 Rs</span></h2>
+                        <h2 className='p-2 flex justify-between'>Delivery : <span>{deliveryCharge.toFixed(2)} Rs</span></h2>
                         <h2 className='p-2 flex justify-between'>Tax(9%) : <span>{taxAmount()} Rs</span></h2>
                         <hr />
-                        <h2 className='p-2 font-bold flex justify-between'>Total : <span>{CalculateTotalAmount()} Rs</span></h2>
+                        <h2 className='p-2 font-bold flex justify-between'>Total : <span>{totalAmounts} Rs</span></h2>
                         <Button className='flex items-center absolute sm:w-[100px] md:w-[300px] lg:w-[430px] mt-2' onClick={() => onApprove({ paymentId: 123 })}>Payment <ArrowBigRight /> </Button>
                     </div>
                 </div>
             </div>
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} orderDetails={orderDetails} />
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                orderDetails={orderDetails}
+                totalAmounts={totalAmounts}
+                taxAmount={taxAmount()}
+                deliveryCharge={deliveryCharge.toFixed(2)}
+            />
         </div>
     )
 }

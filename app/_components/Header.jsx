@@ -29,24 +29,38 @@ import { toast } from 'sonner';
 
 const Header = () => {
   const [categoryList, setCategoryList] = useState([]);
-  const jwt = sessionStorage.getItem('jwt');
-  const isLogin = sessionStorage.getItem('jwt') ? true : false;
-  const router = useRouter();
   const [totalCardItem, setTotalCardItem] = useState(0);
-  const user = JSON.parse(sessionStorage.getItem('user'));
-  const { updateCart, setUpdateCart } = useContext(UpdateCardContext);
   const [cartItemsList, setCartItemsList] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
+  const { updateCart, setUpdateCart } = useContext(UpdateCardContext);
+  const router = useRouter();
+
+  // Variables for session storage
+  const [jwt, setJwt] = useState(null);
+  const [user, setUser] = useState(null);
+  const [isLogin, setIsLogin] = useState(false);
+
+  // UseEffect to handle sessionStorage on client side
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const jwtToken = sessionStorage.getItem('jwt');
+      setJwt(jwtToken);
+      setIsLogin(!!jwtToken);
+
+      const storedUser = sessionStorage.getItem('user');
+      setUser(storedUser ? JSON.parse(storedUser) : null);
+    }
+  }, []);
 
   useEffect(() => {
     getCategoryList();
-  }, []); // Add dependency array to run this effect only once
+  }, []);
 
   useEffect(() => {
     if (user && user.id) {
       getCartItems();
     }
-  }, [updateCart]); // Add dependency array to run this effect only once
+  }, [updateCart, user]);
 
   const getCategoryList = () => {
     GlobalApi.getCategory().then(resp => {
@@ -58,7 +72,6 @@ const Header = () => {
     if (user && user.id) {
       try {
         const cartItemList = await GlobalApi.getCartItems(user.id, jwt);
-        // console.log(cartItemList);
         setTotalCardItem(cartItemList?.length);
         setCartItemsList(cartItemList);
       } catch (error) {
@@ -69,6 +82,7 @@ const Header = () => {
 
   const onSignOut = () => {
     sessionStorage.clear();
+    setIsLogin(false);
     router.push('/sign-in');
   }
 
@@ -82,7 +96,7 @@ const Header = () => {
   useEffect(() => {
     let total = 0;
     cartItemsList.forEach(element => {
-      total = total + element.amount
+      total += element.amount;
     });
     setSubtotal(total);
   }, [cartItemsList]);
@@ -91,7 +105,7 @@ const Header = () => {
     <div className='flex p-5 px-20 shadow-sm justify-between'>
       <div className='flex items-center gap-10'>
         <Link href={'/'}>
-        <Image src='/gLogo.png' alt='logo' width={130} height={130} className='rounded-full' />
+          <Image src='/gLogo.png' alt='logo' width={130} height={130} className='rounded-full' />
         </Link>
 
         <DropdownMenu>
@@ -107,7 +121,7 @@ const Header = () => {
               <Link key={index} href={'/products-category/' + category.attributes.name}>
                 <DropdownMenuItem key={category.id} className='flex gap-2 items-center cursor-pointer'>
                   <Image
-                    src={process.env.NEXT_PUBLIC_BACKEND_BASE_URL + category?.attributes?.icon?.data[0]?.attributes?.formats?.thumbnail?.url}
+                    src={process.env.NEXT_PUBLIC_BACKEND_BASE_URL+category?.attributes?.icon?.data[0]?.attributes?.formats?.thumbnail?.url}
                     unoptimized={true}
                     alt='icon'
                     width={30}
@@ -142,7 +156,7 @@ const Header = () => {
             <SheetClose>
               <div className='absolute w-[90%] bottom-6 flex flex-col'>
                 <h2 className='text-lg font-bold flex justify-between'>Sub Total <span>Rs{subtotal}</span></h2>
-                <Button className='p-2' onClick={()=>router.push(jwt?'/checkout':'/sign-in')}>CheckOut</Button>
+                <Button className='p-2' onClick={()=>router.push(jwt ? '/checkout' : '/sign-in')}>CheckOut</Button>
               </div>
             </SheetClose>
           </SheetContent>
