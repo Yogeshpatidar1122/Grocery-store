@@ -23,7 +23,7 @@ function CheckOut() {
     const [phone, setPhone] = useState('');
     const [pincode, setPincode] = useState('');
     const [address, setAddress] = useState('');
-    const router = useRouter();
+    // const router = useRouter();
 
     const deliveryCharge = 40;
 
